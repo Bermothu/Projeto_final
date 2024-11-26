@@ -22,12 +22,14 @@
     </div>
             
     <!-- Botão de voltar -->
-    <a href="{{url()->previous()}}" class="btn btn-primary mt-3">Voltar</a>
-    <form id="deleteForm" action="{{ route('deletar_profissional', $profissional->id) }}" method="POST">
+    <a href="{{ url()->previous() ?? url('home') }}" class="btn btn-primary mt-3">Voltar</a>
+
+    <form id="deleteForm" action="{{ route('deletar_profissional', $profissional->id) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja deletar este profissional?')">
         @csrf
         @method('DELETE')
         <button type="submit" class="btn btn-danger">Deletar</button>
     </form>
+
 </div>
 
 @endsection

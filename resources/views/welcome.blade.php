@@ -22,6 +22,7 @@
             <a href="{{route('agenda')}}"><button>Agende aqui</button></a>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
+                <br>
                 <button type="submit">Logout</button>
             </form>
         </div>

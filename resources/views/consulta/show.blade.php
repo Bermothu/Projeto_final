@@ -92,7 +92,8 @@
     </div>
 
     <!-- Botão de voltar -->
-    <a href="{{url()->previous()}}" class="btn btn-primary mt-3">Voltar</a>
+    <a href="{{ url()->previous() ?? url('home') }}" class="btn btn-primary mt-3">Voltar</a>
+
             
     <!-- Ações se o usuário for admin -->
     @if (Auth::user()->permission_level == 1)
